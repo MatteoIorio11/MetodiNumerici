@@ -9,10 +9,10 @@ if sign(fa) * sign(fb) > 0
     return
 end
 iterations = 1
-NMAX = log2((B-A)/tolx)-1;
-approssimazioni = zeros(NMAX);
-while iterations < NMAX && abs(fb - fa) > tolx
-    result =A + (B-A)/2;
+NMAX = ceil(log2((B-A)/tolx)-1);
+while iterations <= NMAX && abs(fb - fa) > tolx
+    iterations = iterations + 1
+    result = A + (B-A)/2;
     approssimazioni(iterations) = result;
     fa = fun(A);
     fb = fun(B);
@@ -24,6 +24,5 @@ while iterations < NMAX && abs(fb - fa) > tolx
     elseif sign(fc)*sign(fb) < 0
             A = result;
     end
-    iterations = iterations + 1;
 end
 end

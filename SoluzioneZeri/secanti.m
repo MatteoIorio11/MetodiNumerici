@@ -12,8 +12,11 @@ fx1 = fun(x1);
 fx0 = fun(x0);
 result = x1 - fx1/m;
 fx = fun(result);
+approssimazioni(iterations) = result;
 while iterations < NMAX && abs(fx)>= tolf && abs(fx0*m) > tolx*abs(result)
+    iterations = iterations+1;
     result = x1 - fx1/m;
+    approssimazioni(iterations) = result;
     x0 = x1;
     x1 = result;
     fx0 = fun(x0);
@@ -27,6 +30,5 @@ while iterations < NMAX && abs(fx)>= tolf && abs(fx0*m) > tolx*abs(result)
         iterations = [];
         return
     end
-    iterations = iterations + 1;
 end
 end

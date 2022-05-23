@@ -23,6 +23,6 @@ end
 %Soluzione del sistema triangolare inferiore
 %to do
 [xx, flag] = Lsolve(L, b);
-[a, flag] = Usolve(L', xx);
 %Soluzione del sistema triangolare inferiore
-[]
+[a, flag] = Usolve(L', xx);
+

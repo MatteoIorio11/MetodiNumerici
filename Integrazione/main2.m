@@ -2,6 +2,7 @@ clc
 clear all
 close all
 x = input('Scegli la funzione 1-2-3 : ');
+% Selezione funzione
 switch x
     case 1 
         fname = @(x) cos(x);

@@ -57,6 +57,6 @@ function [L,U,P,flag]=LU_parziale(A)
        end
     end
   
-  L= tril(U) + eye(n); % Estrae i moltiplicatori 
+  L= tril(U, -1) + eye(n); % Estrae i moltiplicatori 
   U= triu(U);           % Estrae la parte triangolare superiore+diagonale
   

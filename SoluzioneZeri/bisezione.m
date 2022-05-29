@@ -1,28 +1,25 @@
-function [result, approssimazioni, iterations] = bisezione(fun, A, B, tolx)
-fa = fun(A);
-fb = fun(B);
-if sign(fa) * sign(fb) > 0
-    disp('Errore nei segni')
-    result = [];
-    approssimazioni = [];
-    iterations = [];
-    return
-end
-iterations = 1
-NMAX = ceil(log2((B-A)/tolx)-1);
-while iterations <= NMAX && abs(fb - fa) > tolx
-    iterations = iterations + 1
-    result = A + (B-A)/2;
-    approssimazioni(iterations) = result;
-    fa = fun(A);
-    fb = fun(B);
-    fc = fun(result);
-    if fun(result) == 0
-        return
-    elseif sign(fc)*sign(fa) < 0
-            B=result;
-    elseif sign(fc)*sign(fb) < 0
-            A = result;
+function [x,xk,it]=bisez(fname,a,b,tol)
+
+fa=fname(a);
+fb=fname(b);
+if  sign(fb) * sign(fa) > 0
+   error('intervallo non corretto');
+else
+    maxit= ceil(log2((B-A)/tolx) -1)
+    %fprintf('n. di passi necessari=%d \n',maxit);
+    it=0;
+    while it<=maxit && abs(b-a)>=tol
+        it=it+1;
+         %calcola xk(it) con la formula corrispondente
+        xk(it) = A + (B-A) * 0.5
+        fxk=fname(xk(it));
+        if fxk==0
+            break;
+        elseif sign(fxk)*sign(fa)>0
+            B = xk(it)
+        elseif sign(fxk)*sign(fb)>0
+            A = xk(it)
+        end
     end
-end
+    x=xk(it);
 end

@@ -1,30 +1,30 @@
-function [result, approssimazioni, iterations] = regula_falsi(fun, A, B, tolx, NMAX)
-fa = fun(A);
-fb = fun(B);
-if sign(fa) * sign(fb) > 0
-    disp('Errorre ')
-    result = [];
-    approssimazioni = [];
-    iterations = [];
-    return
-end
-iterations = 1;
-fx = fa;
-result = A - fa*((B-A)/(fb-fa));
-approssimazioni(iterations)=result;
-while iterations <= NMAX && abs(B- A) >= tolx && abs(fx) >=tolx
-    iterations = iterations+1;
-    result = A - fa*((B-A)/(fb-fa));
-    approssimazioni(iterations) = result;
-    fa = fun(A);
-    fb = fun(B);
-    fx = fun(result);
-    if fun(result) == 0
-        return
-    elseif sign(fa) * sign(fx) > 0
-        B = result;
-    elseif sign(fb) * sign(fx) > 0
-        A = result;
+function [x, xk, it] = regula_falsi(fname,a,b,tol,nmax)
+fa=fname(a);
+fb=fname(b);
+if sign(fa)*sign(fb)>=0
+   error('intervallo non corretto');
+else
+    it=0;
+    fxk=fname(a);
+    while it <= NMAX && abs(b -a)> tol&& abs(fxk) > tol
+        it=it+1;
+        xk(it)= a - fa*((b -a)/(fb - fa));
+        %fprintf('it=%d  x=%8.15f \n',it,xk(it));
+        fxk=fname(xk(it));
+        fb = fname(b);
+        fa = fname(a);
+        if fxk==0
+            return;
+        elseif sign(fxk)*sign(fa)>0
+            b = x1;
+        elseif sign(fxk)*sign(fb)>0
+             a = x1;
+        end
     end
-end
+    if it==nmax 
+        error('Raggiunto numero max di iterazioni');
+        x=[];
+    else
+        x=xk(it);
+    end
 end

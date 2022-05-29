@@ -1,34 +1,23 @@
-function [result, approssimazioni, iterations] = secanti(fun, x0, x1, tolx, tolf, NMAX)
-m = (fun(x1) - fun(x0))/(x1 - x0);
-if m == 0
-    disp('Errore')
-    result = [];
-    approssimazioni = [];
-    iterations = [];
-    return
+function [x, nit] = secanti(fname, x0, xm1, tolx, tolf, NMAX)
+%Implementazione del metodo delle secanti per il calcolo degli zeri in
+%equazioni non lineari. (Fa parte dei metodi di linearizzazione.)
+%A differenza del metodo delle corde non usa un valore di m costante (Usa quello dei due iterati precedenti).
+%Convergenza superlineare sei valori iniziali si scelgono vicino alla
+%soluzione -> CONVERGENZA LOCALE
+m=(fname(x0)-fname(xm1))/(x0-xm1);
+x1=x0-fname(x0)/m;
+nit=1;
+x(nit)=x1;
+while nit <= NMAX && abs(m*fname(x0))>=tolx*abs(x1) && abs(fname(x1))>=tolf
+	xm1=x0;
+	x0=x1;
+	fxm1=fname(xm1);
+	fx0=fname(x0);
+	m=(fx0-fxm1)/(x0-xm1);
+	x1=x0-fx0/m;
+	nit=nit+1;
+	x(nit)=x1;
 end
-iterations = 1;
-fx1 = fun(x1);
-fx0 = fun(x0);
-result = x1 - fx1/m;
-fx = fun(result);
-approssimazioni(iterations) = result;
-while iterations < NMAX && abs(fx)>= tolf && abs(fx0*m) > tolx*abs(result)
-    iterations = iterations+1;
-    result = x1 - fx1/m;
-    approssimazioni(iterations) = result;
-    x0 = x1;
-    x1 = result;
-    fx0 = fun(x0);
-    fx1 = fun(x1);
-    fx = fun(result);
-    m = (fx1 - fx0)/(x1 - x0);
-    if m == 0
-        disp('Errore')
-        result = [];
-        approssimazioni = [];
-        iterations = [];
-        return
-    end
-end
+if nit==NMAX
+fprintf('raggiunto massimo numero di iterazioni \n');
 end

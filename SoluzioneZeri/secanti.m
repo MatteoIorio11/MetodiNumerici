@@ -1,23 +1,25 @@
-function [x, nit] = secanti(fname, x0, xm1, tolx, tolf, NMAX)
-%Implementazione del metodo delle secanti per il calcolo degli zeri in
-%equazioni non lineari. (Fa parte dei metodi di linearizzazione.)
-%A differenza del metodo delle corde non usa un valore di m costante (Usa quello dei due iterati precedenti).
-%Convergenza superlineare sei valori iniziali si scelgono vicino alla
-%soluzione -> CONVERGENZA LOCALE
-m=(fname(x0)-fname(xm1))/(x0-xm1);
-x1=x0-fname(x0)/m;
-nit=1;
-x(nit)=x1;
-while nit <= NMAX && abs(m*fname(x0))>=tolx*abs(x1) && abs(fname(x1))>=tolf
-	xm1=x0;
-	x0=x1;
-	fxm1=fname(xm1);
-	fx0=fname(x0);
-	m=(fx0-fxm1)/(x0-xm1);
-	x1=x0-fx0/m;
-	nit=nit+1;
-	x(nit)=x1;
+function [x1,xk,it]=secanti(fname,xm1,x0,tolx,tolf,nmax)
+
+fxm1=fname(xm1);
+fx0=fname(x0); 
+d=fx0*(x0-xm1)/(fx0-fxm1);
+x1=x0-d;
+fx1=feval(fname,x1);
+it=1;
+xk(it)=x1;
+%fprintf('it=%d  x=%8.15f \n',it,x1);
+while it<nmax && abs(fx1)>=tolf && abs(d)>=tolx*abs(x1)
+    xm1=x0;
+    x0=x1;
+    fxm1=fname(xm1);
+    fx0=fname(x0); 
+    d=fx0*(x0-xm1)/(fx0-fxm1);
+    x1=x0-d;
+    fx1=fname(x1);
+    it=it+1;
+    xk(it)=x1;
+    %fprintf('it=%d  x=%8.15f \n',it,x1);
 end
-if nit==NMAX
-fprintf('raggiunto massimo numero di iterazioni \n');
+if it==nmax
+   fprintf('raggiunto massimo numero di iterazioni \n');
 end

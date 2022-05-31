@@ -4,7 +4,7 @@
   
 dove f = @(x) x^2 + x^3 ......;
   
-K = (|x|*|f'(x)|)/|f(x)|
+K = ( |x| * |f'(x)| ) / |f(x)|
 
 indice di condizionamento <Matrice>
 
@@ -30,7 +30,7 @@ indice di condizionamento <Matrice>
   
   a*x^2 + b*x + c = 0
   
-  x1*x2=c/a
+  x1*x2=c / a
   
   --------------
   
@@ -40,7 +40,7 @@ indice di condizionamento <Matrice>
   
  x = norm(V, 2)
   
- V = x/V;
+ V = V / x;
   
   
  -------------

@@ -57,7 +57,8 @@ indice di condizionamento <Matrice>
   
   I=eye(n)
   
-  -> autovalori => A - a*I devo risolvere questo problema, i risultati di 'a' saranno i miei autovalori.
+  -> autovalori => 
+         [ (A - a*I)=0 ] devo risolvere questo problema, i risultati di 'a' saranno i miei autovalori.
     
 
   norma infinito = MASSIMO DEL VALORE ASSOLUTO DELLA SOMMA SULLE RIGHE

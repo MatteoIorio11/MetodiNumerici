@@ -16,5 +16,8 @@ for k=1:n
     Lk(k, :) = polyval(p, xx);
     %calcola i coefficienti del k-esimo polinomio di Lagrange e denota con
     %Lk la sua valutazione nei punti xx 
+    %SECONDO MODO
+    %Lk=polyval(p, xx);
+    %yy = yy + y(K)*Lk;
 end
 yy = y * Lk;

@@ -50,6 +50,14 @@ indice di condizionamento <Matrice>
   norma 2 = sqrt(p(A^T * A)) p -> raggio spettrale -> MASSIMO DEGLI AUTOVALORI IN VALORE ASSOLUTO 
   
   -> [autovalori] = eig(A)
+  
+  OPPURE 
+  
+  [n, m] = size(A)
+  
+  I=eye(n)
+  
+  -> autovalori => A - a*I devo risolvere questo problema, i risultati di 'a' saranno i miei autovalori.
     
 
   norma infinito = MASSIMO DEL VALORE ASSOLUTO DELLA SOMMA SULLE RIGHE

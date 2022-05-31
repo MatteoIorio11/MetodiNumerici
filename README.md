@@ -47,7 +47,7 @@ indice di condizionamento <Matrice>
   
   norma 1 = MASSIMO DEL VALORE ASSOLUTO DELLA SOMMA SULLE COLONNE
   
-  norma 2 = sqrt(p(A^T * A)) p -> raggio spettrale 
+  norma 2 = sqrt(p(A^T * A)) p -> raggio spettrale -> MASSIMO DEGLI AUTOVALORI IN VALORE ASSOLUTO
 
   norma infinito = MASSIMO DEL VALORE ASSOLUTO DELLA SOMMA SULLE RIGHE
 

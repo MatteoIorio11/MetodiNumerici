@@ -1,8 +1,8 @@
   function pval = pvalHorner(a,xv)
 % Valutazione di un polinomio con lo schema di Horner
 % Input
-%    c:   vettore contenente i coefficienti del polinomio da valutare
-%    z:   vettore delle ascisse in cui valutare il polinomio
+%    a:   vettore contenente i coefficienti del polinomio da valutare
+%    xv:   vettore delle ascisse in cui valutare il polinomio
 %
 % Output
 % pval:   vettore che contiene la valutazione del polinomio in ogni

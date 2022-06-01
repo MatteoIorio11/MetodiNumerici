@@ -25,4 +25,5 @@ end
 [xx, flag] = Lsolve(L, b);
 %Soluzione del sistema triangolare inferiore
 [a, flag] = Usolve(L', xx);
+% a sono i coefficienti del polinomio, dopo dovrò chiamare pvalHorner!!!
 

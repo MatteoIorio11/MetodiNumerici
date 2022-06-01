@@ -9,5 +9,5 @@ for i=1:n
 end
 % OPPURE
 %for k = 1: n-1
-%    a(k+1:n) = (a(k+1:n) - a(k:n-1))./(xnodi(k+1:n) - xnodi(1:n-k));
+%    a(k+1:n) = (a(k+1:n) - a(k:n-1))./(xnodi(k+1:n) - xnodi(k));
 %end

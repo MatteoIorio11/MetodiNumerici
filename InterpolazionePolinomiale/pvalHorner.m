@@ -6,7 +6,7 @@
 %
 % Output
 % pval:   vettore che contiene la valutazione del polinomio in ogni
-%          componente del vettore z.
+%          componente del vettore xv.
 % 
 
 n = length(a); 

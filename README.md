@@ -77,7 +77,7 @@ indice di condizionamento <Matrice>
   * norma infinito = MASSIMO DEL VALORE ASSOLUTO DELLA SOMMA SULLE RIGHE
 
 -----------------
-  Quando è possibile applicare LUsolve :
+  <h3> Quando è possibile applicare LUsolve : </h3>
   
   ```
   [n, m] = size(A)

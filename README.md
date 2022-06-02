@@ -92,12 +92,7 @@ indice di condizionamento <Matrice>
   end
 ```
 
+-----------------
 
-
-
-
-
-
-
-
+  <h3> Quando è possibile applicare Cholewsky: </h3>
 

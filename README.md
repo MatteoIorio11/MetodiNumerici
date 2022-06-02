@@ -82,7 +82,7 @@ indice di condizionamento <Matrice>
   ```
   [n, m] = size(A)
   for i=1:n
-    if det(A(1:n, 1:n)) < 0
+    if det(A(1:i, 1:i)) < 0
         disp('Non si può applicare')
         flag = 1
         return

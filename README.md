@@ -76,8 +76,19 @@ indice di condizionamento <Matrice>
   ```
   * norma infinito = MASSIMO DEL VALORE ASSOLUTO DELLA SOMMA SULLE RIGHE
 
-
-
+-----------------
+  Quando è possibile applicare LUsolve :
+  
+  ```
+  [n, m] = size(A)
+  for i=1:n
+    if det(A(1:n, 1:n)) < 0
+        disp('Non si può applicare')
+        flag = 1
+        return
+    end
+  end
+```
 
 
 

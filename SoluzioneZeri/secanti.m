@@ -5,7 +5,7 @@ fx0=fname(x0);
 % m = (fxm1 - fx0)/(xm1 - x0)
 d=fx0*(x0-xm1)/(fx0-fxm1);
 x1=x0-d;
-fx1=feval(fname,x1);
+fx1=feval(fname,x1); % identico a dire fx1 = fname(x1)
 it=1;
 xk(it)=x1;
 %fprintf('it=%d  x=%8.15f \n',it,x1);

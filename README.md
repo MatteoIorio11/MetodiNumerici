@@ -25,7 +25,7 @@ indice di condizionamento <Matrice>
   <h3> Come capire se un'operazione è stabile : </h3> 
 
   ```
-  x = 10^-5 + sqrt(10^5 - 0.00000000000000000000000000000000000000000000000000000000000000001)
+  x = 10^-5 + sqrt((10^5)^2 - 0.00000000000000000000000000000000000000000000000000000000000000001)
   ```
   
   -> Vedrai che questa operazione avrà come risultato 0, vuol dire che questa formula soffre della CANCELLAZIONE NUMERICA.

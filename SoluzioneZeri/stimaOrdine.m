@@ -1,4 +1,4 @@
-function [p] = stimaOrdine(xk, iterazioni)
+function [ordine] = stimaOrdine(xk, iterazioni)
 p=zeros(iterazioni,1);
 
 for k=3:iterazioni-1

@@ -90,6 +90,13 @@ indice di condizionamento <Matrice>
         return
     end
   end
+                           
+                           
+%OPPURE
+%  if all(detA~=0)
+%    disp('Matrice A ammette fattorizzazione di Gauss senza pivoting')
+%  end
+
 ```
 
 -----------------

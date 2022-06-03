@@ -13,7 +13,7 @@ condG = cond(G);
 %to do
 %fattorizzazione di Choleski
 %to do
-[L, p] = chol(A, 'lower');
+[L, p] = chol(G, 'lower');
 if (p > 0)
     disp('G non è definita positiva');
     a = G\z;

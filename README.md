@@ -102,4 +102,20 @@ indice di condizionamento <Matrice>
 -----------------
 
   <h3> Quando è possibile applicare Cholewsky: </h3>
-
+  
+  Una matrice A ammette Cholewsky quando è simmetrica ed è definita positiva : 
+  
+  ```
+  %PRIMO CONTROLLO
+  if(A==A')
+    disp('Matrice simmetrica')
+  end
+  %SECONDO CONTROLLO 
+  for i=1:n
+    if det(A(1:i, 1:i)) <= 0
+        disp('Non si può applicare')
+        flag = 1
+        return
+    end
+  end
+  ```

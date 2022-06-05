@@ -129,13 +129,10 @@ indice di condizionamento <Matrice>
  ```
     %Calcolo la somma dei valori assoluti delle n+1 funzioni base di
     %lagrange di grado n, valutati nei punti xx (sia nel caso in cui i nodi
-    %siano equidistanti che nel caso in cui i nodi siano gli zeri dei
-    %polinomi di Chebichev)
+    %siano equidistanti
     for l=1:n+1        
         pe=plagr(xe,l);
         Le=Le+abs(polyval(pe,xx));
-        pc=plagr(xc,l);
-        Lc=Lc+abs(polyval(pc,xx));
     end
     %La costante di Lebesgue è il massimo della somma dei valori assoluti delle n+1 funzioni base di
     %lagrange di grado n, valutati nei punti xx

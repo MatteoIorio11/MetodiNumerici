@@ -62,6 +62,12 @@ indice di condizionamento <Matrice>
   
  * norma 2 = sqrt(p(A^T * A)) -> MASSIMO DEGLI AUTOVALORI IN VALORE ASSOLUTO 
   ```
+  %CALCOLO NORMA 2  NEI VETTORI 
+  
+  n = sqrt(x' * x)
+  
+  
+  % CALCOLO NORMA NELLE MATRICI
   -> [autovalori] = eig(A)
   
           OPPURE 

@@ -119,3 +119,25 @@ indice di condizionamento <Matrice>
     end
   end
   ```
+  
+  ---------------------------------
+ 
+ <h3> Calcolo della costante di Lebesgue per il grado n del polinomio </h3> 
+ 
+ Indice di condizionamento di un polinomio interpolatore
+ 
+ ```
+    %Calcolo la somma dei valori assoluti delle n+1 funzioni base di
+    %lagrange di grado n, valutati nei punti xx (sia nel caso in cui i nodi
+    %siano equidistanti che nel caso in cui i nodi siano gli zeri dei
+    %polinomi di Chebichev)
+    for l=1:n+1        
+        pe=plagr(xe,l);
+        Le=Le+abs(polyval(pe,xx));
+        pc=plagr(xc,l);
+        Lc=Lc+abs(polyval(pc,xx));
+    end
+    %La costante di Lebesgue è il massimo della somma dei valori assoluti delle n+1 funzioni base di
+    %lagrange di grado n, valutati nei punti xx
+    LLe(i)=max(Le);
+```

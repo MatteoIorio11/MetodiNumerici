@@ -90,7 +90,8 @@ indice di condizionamento <Matrice>
   ```
   [n, m] = size(A)
   for i=1:n
-    if det(A(1:i, 1:i)) <= 0
+    detA(i) = det((A(1:i, 1:i));
+    if detA(i) == 0
         disp('Non si può applicare')
         flag = 1
         return
@@ -99,9 +100,12 @@ indice di condizionamento <Matrice>
                            
                            
 %OPPURE
-%  if all(det(A))~=0
-%    disp('Matrice A ammette fattorizzazione di Gauss senza pivoting')
-%  end
+  for i=1:n
+    detA(i) = det((A(1:i, 1:i));
+  end
+  if all(detA)~=0
+    disp('Matrice A ammette fattorizzazione di Gauss senza pivoting')
+  end
 
 ```
 

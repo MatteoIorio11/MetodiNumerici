@@ -165,6 +165,21 @@ indice di condizionamento <Matrice>
 
  ```
  
+ Determinante della matrice inversa 
+ 
+  ```
+ [L, U, flag] = LUnopivot(A);
+ detA = 1
+ for i=1:n
+    detA = detA * U(i,i)
+  end
+  
+  detInvA = 1/detA;  
+  % OPPURE
+  detA = prod(diag(U))
+  detInvA = 1/detA
+ ```
+ 
  ----------------------------
  <h3> Calcolo del determinante tramite fattorizzazione LUpivot</h3>
  

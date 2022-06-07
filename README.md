@@ -170,6 +170,10 @@ indice di condizionamento <Matrice>
  <h3> Calcolo del determinante tramite fattorizzazione LUnopivot</h3>
  
  
+  ![aaa](https://user-images.githubusercontent.com/70414065/172485072-b748b2ab-73bd-4c4b-8526-1908e45c02f7.png)
+
+ 
+ 
  ```
  [L, U, flag] = LUnopivot(A);
  detA = 1
@@ -219,6 +223,7 @@ indice di condizionamento <Matrice>
  ```
  
  Determinante della matrice inversa 
+ 
  
  ```
  [L, U, ,P, flag] = LUpivot(A);

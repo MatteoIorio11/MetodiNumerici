@@ -178,10 +178,10 @@ indice di condizionamento <Matrice>
  for i=1:n
     detA = detA * U(i,i)
   end
-  detA = (-1)^s*detA;
+  detA = ((-1)^s)*detA;
   
   % OPPURE
-  detA = (-1)^s*prod(diag(U))
+  detA = ((-1)^s)*prod(diag(U))
 
  ```
  

@@ -237,6 +237,8 @@ yy = fun(xx);
 xv = linspace(1, 3, 100);
 [pol, a] = interpN(xx, yy, xv);
 
+
+% COSTRUISCO LA FUNZIONE DEL POLINOMIO INTERPOLATORE !!!!
 nval = length(xv);
 n = length(xx);
 ps = a(n);

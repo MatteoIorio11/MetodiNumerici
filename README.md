@@ -183,5 +183,24 @@ indice di condizionamento <Matrice>
   % OPPURE
   detA = ((-1)^s)*prod(diag(U))
 
+
+ ```
+ 
+ Determinante della matrice inversa 
+ 
+ ```
+ [L, U, ,P, flag] = LUpivot(A);
+ detA = 1
+ for i=1:n
+    detA = detA * U(i,i)
+  end
+  detA = ((-1)^s)*detA;
+  
+  detInvA = 1/detA;
+  
+  % OPPURE
+  detA = ((-1)^s)*prod(diag(U));
+  detInvA = 1/detA;
+  
  ```
  

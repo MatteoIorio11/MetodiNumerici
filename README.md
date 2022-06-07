@@ -218,4 +218,31 @@ indice di condizionamento <Matrice>
   detInvA = 1/detA;
   
  ```
+ ---------------
  
+  <h3> Trovare la funzione del polinomio interpolatore</h3>
+Formula simbolica del polinomio di interpolazione di Newton nella variabile z Noti i coefficienti a del polinomio nella base di Newton, implemento in
+maniera simbolica l'algoritmo di Horner per la valutazione del polinomio di Newton nella variabile simbolica z:
+
+ 
+ ```
+syms z
+
+fun = @(x) x + sqrt(x - 1);
+% Punti 1 e 2
+n = 3;
+% Interpolazione di grado 3 in forma di NEWTON
+xx = linspace(1, 3, n+1);
+yy = fun(xx);
+xv = linspace(1, 3, 100);
+[pol, a] = interpN(xx, yy, xv);
+
+nval = length(xv);
+n = length(xx);
+ps = a(n);
+for k=n-1:-1:1
+    ps = ps*(z-xx(k)) + a(k);
+end
+p = matlabFunction(ps);
+```
+

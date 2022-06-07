@@ -159,5 +159,27 @@ indice di condizionamento <Matrice>
  for i=1:n
     detA = detA * U(i,i)
   end
+  
+  % OPPURE
+  detA = prod(diag(U))
+
+ ```
+ 
+ ----------------------------
+ <h3> Calcolo del determinante tramite fattorizzazione LUpivot</h3>
+ 
+ In questo caso all'interno dell'algoritmo vi potrebber essere degli spostamenti di valori. L' esponente 's' rappresenta il numero di spostamenti che sono stati effettuati sulle righe.
+ 
+  ```
+ [L, U, ,P, flag] = LUpivot(A);
+ detA = 1
+ for i=1:n
+    detA = detA * U(i,i)
+  end
+  detA = (-1)^s*detA;
+  
+  % OPPURE
+  detA = (-1)^s*prod(diag(U))
+
  ```
  

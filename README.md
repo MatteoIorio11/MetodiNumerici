@@ -53,6 +53,23 @@ indice di condizionamento <Matrice>
   
  ```
   
+  
+  -------------
+  
+    <h3> Quando applicare newton modificato </h3>
+
+  ```
+  syms x
+  fx = x^2 + 2;
+  dfx = diff(fx, 1, x);
+  val = solve(fx);
+  valD = solve(dfx);
+  
+  Nel caso in cui val e valD fossero uguali, dovrò utilizzare newton modifcato con M = 2 poiche sia la funzione che la derivata si annullano in 'val'
+  
+  ```
+  
+  
  -------------
   
   <h3> Calcolo delle norme </h3> 

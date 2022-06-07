@@ -56,7 +56,7 @@ indice di condizionamento <Matrice>
   
   -------------
   
-    <h3> Quando applicare newton modificato </h3>
+  <h3> Quando applicare newton modificato </h3>
 
   ```
   syms x

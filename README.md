@@ -88,15 +88,13 @@ indice di condizionamento <Matrice>
   
   % CALCOLO NORMA NELLE MATRICI
   -> [autovalori] = eig(A)
+      norma2 = max(autovalori)
   
-          OPPURE 
-  
-          [n, m] = size(A)
-  
-  I=eye(n)
-  
+    % OPPURE 
+    % [n, m] = size(A)
+    % I=eye(n)
   -> autovalori => 
-         [ (A - a*I)=0 ] devo risolvere questo problema, i risultati di 'a' saranno i miei autovalori.
+      %   [ (A - a*I)=0 ] devo risolvere questo problema, i risultati di 'a' saranno i miei autovalori.
     
   ```
   * norma infinito = MASSIMO DEL VALORE ASSOLUTO DELLA SOMMA SULLE RIGHE

@@ -169,6 +169,8 @@ indice di condizionamento <Matrice>
  <h3> Calcolo del determinante tramite fattorizzazione LUpivot</h3>
  
  In questo caso all'interno dell'algoritmo vi potrebber essere degli spostamenti di valori. L' esponente 's' rappresenta il numero di spostamenti che sono stati effettuati sulle righe.
+ \det(A)=\left(-1\right)^{S}\prod_{i=1}^{n}u_{ii}
+
  
   ```
  [L, U, ,P, flag] = LUpivot(A);

@@ -151,6 +151,8 @@ indice di condizionamento <Matrice>
 
 ----------------------------
  <h3> Calcolo del determinante tramite fattorizzazione LUnopivot</h3>
+ 
+ 
  ```
  [L, U, flag] = LUnopivot(A);
  detA = 1

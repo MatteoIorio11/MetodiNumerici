@@ -66,6 +66,8 @@ indice di condizionamento <Matrice>
   valD = solve(dfx);
   
   Nel caso in cui val e valD fossero uguali, dovrò utilizzare newton modifcato con M = 2 poiche sia la funzione che la derivata si annullano in 'val'
+  PS : nel caso in cui la derivata prima non fosse 0, è buona norma continuare ad iterare questo processo per vedere se anche le altre derivate di fx si annullano, 
+  per ogni valDi-esimo = solve(dfxi-esima) = val, M verrà incrementato.
   
   ```
   

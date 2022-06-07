@@ -148,3 +148,6 @@ indice di condizionamento <Matrice>
     %lagrange di grado n, valutati nei punti xx
     LLe(i)=max(Le);
 ```
+
+----------------------------
+ <h3> Calcolo del determinante tramite fattorizzazione LU</h3> 

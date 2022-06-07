@@ -104,7 +104,7 @@ indice di condizionamento <Matrice>
 -----------------
   <h3> Quando è possibile applicare LUsolve : </h3>
   
-  Il determinante di tutte le sottomatrici deve essere >= 0 per applicare l'algoritmo LUnopivot o LUpivot 
+  Il determinante di tutte le sottomatrici deve essere != 0 per applicare l'algoritmo LUnopivot o LUpivot 
   
   ```
   [n, m] = size(A)

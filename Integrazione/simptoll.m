@@ -3,7 +3,7 @@ Nmax = 2048;
 err = 1;
 N = 1;
 IN = TrapComp(fun, a, b, N);
-while N<=Nmax && erro > tol
+while N<=Nmax && err > tol
     N = 2*N;
     I2N = SimpComp(fun, a, b, N);
     if abs(IN-I2N)==0

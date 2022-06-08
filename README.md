@@ -127,6 +127,44 @@ indice di condizionamento <Matrice>
 ```
 
 -----------------
+<h3> Quando è possibile applicare Cholewsky in una matrice PARAMETRICA: </h3>
+
+Bisogna controllare se tutti i valori del determinante di tale matrice parametrica sono maggiori stretti di 0
+
+```
+  A = [8, 4, 0, 0;
+     4, 4, a, -1;
+     0, a, 0.5*(a+2)^2, a+1;
+     0, -1, a+1, a+1];
+B =  [8, 4, 0, 0;
+     4, 4, a, -1;
+     0, a, 0.5*(a+2)^2, a+1;
+     0, -1, a+1, 2];
+
+[n, m] = size(A);
+%I determinanti delle sottomatrici principali di A sono:
+%[8, 16, 32*a + 32, -4*a^2]
+%Poichè -4a^2 non è mai positivo, non esiste alcun valore di a per cui la
+%matrice A possa essere definita positiva( minori principali >0)
+for i=1:n
+    detA = det(A(1:i, 1:i));
+end
+%I determinanti delle sottomatrici principali di B sono:
+%[8, 16, 32*a + 32, 32 - 36*a^2]
+%Si verifica che per -sqrt(32)/6<a<sqrt(32)/6 la matrice B è definita
+%positiva ( minori principali >0)
+%Quindi il valore astar=1/2 rientra in questo range di valori
+for i=1:n
+    detB = det(B(1:i, 1:i));
+end
+astar=1/2;
+Bs=matlabFunction(B);
+M=Bs(astar)
+  
+  
+```
+  
+-----------------
 
   <h3> Quando è possibile applicare Cholewsky: </h3>
   

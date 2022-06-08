@@ -129,7 +129,8 @@ indice di condizionamento <Matrice>
 -----------------
 <h3> Quando è possibile applicare Cholewsky in una matrice PARAMETRICA: </h3>
 
-Bisogna controllare se tutti i valori del determinante di tale matrice parametrica sono maggiori stretti di 0
+Bisogna controllare se tutti i valori del determinante di tale matrice parametrica sono maggiori stretti di 0, successivamente bisognerà verificare che 
+per i valori per cui il determinante è maggiore di 0 la matrice sia anche simmetrica
 
 ```
   A = [8, 4, 0, 0;

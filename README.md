@@ -80,6 +80,12 @@ indice di condizionamento <Matrice>
   
  * norma 1 = MASSIMO DEL VALORE ASSOLUTO DELLA SOMMA SULLE COLONNE
   
+  
+  ```
+  val = max(sum(abs(A(:,[1:n]))));
+  ```
+  
+  
  * norma 2 = sqrt(p(A^T * A)) -> MASSIMO DEGLI AUTOVALORI IN VALORE ASSOLUTO 
   ```
   %CALCOLO NORMA 2  NEI VETTORI 

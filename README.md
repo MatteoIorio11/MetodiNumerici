@@ -82,6 +82,7 @@ indice di condizionamento <Matrice>
   
   
   ```
+  [n] = size(A,1);
   val = max(sum(abs(A(:,[1:n]))));
   ```
   
@@ -106,6 +107,12 @@ indice di condizionamento <Matrice>
   ```
   * norma infinito = MASSIMO DEL VALORE ASSOLUTO DELLA SOMMA SULLE RIGHE
 
+  ```
+  [n] = size(A,2);
+  val = max(sum(abs(A([1:n],:))));
+  ```
+  
+  
 -----------------
   <h3> Quando è possibile applicare LUsolve : </h3>
   

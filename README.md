@@ -28,7 +28,8 @@ indice di condizionamento <Matrice>
   x = 10^-5 + sqrt((10^5)^2 - 0.00000000000000000000000000000000000000000000000000000000000000001)
   ```
   
-  -> Vedrai che questa operazione avrà come risultato 0, vuol dire che questa formula soffre della CANCELLAZIONE NUMERICA.
+  -> Vedrai che questa operazione avrà come risultato 0, vuol dire che questa formula soffre della CANCELLAZIONE NUMERICA. Per ovviare a tale problema bisognerà semplificare l'operazione, usando Taylor o altre proprietà.
+  https://en.wikipedia.org/wiki/Taylor_series
   
   In generale per vedere se è stabile basta vedere se per un qualche valore il tuo risultato è 0
   

@@ -15,6 +15,6 @@ pval=zeros(nval,1);
 for i=1:nval
 pval(i) = a(n);
   for k=n-1:-1:1
-        pval(i) = pval(i) * xv(k) + a(k);
+        pval(i) = pval(i) * xv(i) + a(k);
   end
 end

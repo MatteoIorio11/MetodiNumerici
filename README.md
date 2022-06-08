@@ -240,7 +240,7 @@ for n=5:5:30
  
   ![aaa](https://user-images.githubusercontent.com/70414065/172485072-b748b2ab-73bd-4c4b-8526-1908e45c02f7.png)
 
- 
+ Nella formula qua proposta si faccia a meno del : (-1)^s perchè è totalmente inutile
  
  ```
  [L, U, flag] = LUnopivot(A);

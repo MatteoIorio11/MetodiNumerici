@@ -11,6 +11,7 @@ n=size(A,2);
 h = Q'*y;
 [a, flag] = Usolve(R(1:n, 1:n), h(1:n));
 
-% 'a' sono i coefficienti del polinomio, dopo bisogna richiamare pvalHorner
-
+% =============================================================================|
+% a sono i coefficienti del polinomio, dopo dovrò chiamare pvalHorner!!!       |
+% =============================================================================|
 

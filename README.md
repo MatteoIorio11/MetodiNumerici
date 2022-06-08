@@ -197,7 +197,7 @@ end
  ```
 i=0;
 xxx = 200;
-nodi = linspace(-1, 1, xxx);
+z = linspace(-1, 1, xxx);
 for n=5:5:30
     i=i+1;
     %----------------------------

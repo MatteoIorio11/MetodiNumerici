@@ -311,3 +311,12 @@ end
 p = matlabFunction(ps);
 ```
 
+------------
+
+<h3> Calcolo del determinante tramite fattorizzazione di Chol</h3>
+
+```
+[L, p] = chol(A, 'lower');
+det(A)
+detM = prod(diag(L))^2
+```

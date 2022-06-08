@@ -196,6 +196,8 @@ end
  
  ```
 i=0;
+xxx = 200;
+nodi = linspace(-1, 1, xxx);
 for n=5:5:30
     i=i+1;
     %----------------------------
@@ -204,8 +206,8 @@ for n=5:5:30
     %nodi di Chebyshev 
     xc=cos((2*[n+1:-1:1]-1)*pi/(2*(n+1)));
     
-    Le=zeros(200,1);
-    Lc=zeros(200,1);
+    Le=zeros(xxx,1);
+    Lc=zeros(xxx,1);
     %calcolo della costante di Lebesgue per ogni valore di n e per ogni
     %scelta del tipo di punti equidistanti o zeri di chebichev
     for l=1:n+1        

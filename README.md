@@ -159,8 +159,10 @@ for i=1:n
 end
 astar=1/2;
 Bs=matlabFunction(B);
-M=Bs(astar)
-  
+A=Bs(astar)
+if A == A'
+    disp('A è simmetrica')
+end
   
 ```
   

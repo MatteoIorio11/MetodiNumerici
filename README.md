@@ -271,6 +271,9 @@ for n=5:5:30
  
  ----------------------------
  <h3> Calcolo del determinante tramite fattorizzazione LUpivot</h3>
+
+
+![aaa](https://user-images.githubusercontent.com/70414065/172485072-b748b2ab-73bd-4c4b-8526-1908e45c02f7.png)
  
  In questo caso all'interno dell'algoritmo vi potrebber essere degli spostamenti di valori. L' esponente 's' rappresenta il numero di spostamenti che sono stati effettuati sulle righe.
  

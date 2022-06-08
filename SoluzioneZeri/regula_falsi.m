@@ -9,6 +9,9 @@ else
     fxk=fname(a);
     while it<nmax && abs(b-a)>=tol && abs(fxk)>=tol 
         it=it+1;
+        % m = (fb-fa)/(b-a);
+        % d = fa/d;
+        % xk(it) = a -d;
         xk(it)=a-fa*(b-a)/(fb-fa);
         %fprintf('it=%d  x=%8.15f \n',it,xk(it));
         fxk=fname(xk(it));

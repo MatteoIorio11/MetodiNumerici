@@ -195,16 +195,27 @@ end
  Indice di condizionamento di un polinomio interpolatore
  
  ```
-    %Calcolo la somma dei valori assoluti delle n+1 funzioni base di
-    %lagrange di grado n, valutati nei punti xx (sia nel caso in cui i nodi
-    %siano equidistanti
+i=0;
+for n=5:5:30
+    i=i+1;
+    %----------------------------
+    %nodi equispaziati
+    xe=-1+2*([1:n+1]-1)/n;
+    %nodi di Chebyshev 
+    xc=cos((2*[n+1:-1:1]-1)*pi/(2*(n+1)));
+    
+    Le=zeros(200,1);
+    Lc=zeros(200,1);
+    %calcolo della costante di Lebesgue per ogni valore di n e per ogni
+    %scelta del tipo di punti equidistanti o zeri di chebichev
     for l=1:n+1        
         pe=plagr(xe,l);
-        Le=Le+abs(polyval(pe,xx));
+        Le=Le+abs(polyval(pe,z));
+        pc=plagr(xc,l);
+        Lc=Lc+abs(polyval(pc,z));
     end
-    %La costante di Lebesgue è il massimo della somma dei valori assoluti delle n+1 funzioni base di
-    %lagrange di grado n, valutati nei punti xx
     LLe(i)=max(Le);
+    LLc(i)=max(Lc);
 ```
 
 ----------------------------

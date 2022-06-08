@@ -333,3 +333,15 @@ p = matlabFunction(ps);
 det(A)
 detM = prod(diag(L))^2
 ```
+
+-------------
+
+<h3> Integrazioni di funzioni simboliche </h3>
+
+```
+syms x z
+fax = x.^5 + 2*z*x.^4 + 4*(z^2)*x.^2 + 3;
+I = int(fax);
+```
+
+

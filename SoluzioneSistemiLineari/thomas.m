@@ -25,5 +25,5 @@ end
 %y %del sistema bidiagonale inferiore
 x(n)=y(n)/alpha(n);
 for i=n-1:-1:1
-   x(i) = (y(i)+c(i)*x(i+1))/alpha(i);
+   x(i) = (y(i)-c(i)*x(i+1))/alpha(i);
 end

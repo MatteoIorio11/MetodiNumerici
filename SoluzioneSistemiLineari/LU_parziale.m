@@ -39,7 +39,7 @@ function [L,U,P,flag]=LU_parziale(A)
          % to do 
          tmp = U(r_max, :);
          U(r_max, :) = U(k, :);
-         U(k, :) = U(r_max, :);
+         U(k, :) = tmp;
          tmp = P(r_max, :);
          P(r_max, :) = P(k, :);
          P(k, :) = tmp;

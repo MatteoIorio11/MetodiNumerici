@@ -134,7 +134,7 @@ indice di condizionamento <Matrice>
   for i=1:n
     detA(i) = det((A(1:i, 1:i));
   end
-  if all(detA)~=0
+  if all(detA ~= 0)
     disp('Matrice A ammette fattorizzazione di Gauss senza pivoting')
   end
 

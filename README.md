@@ -119,6 +119,16 @@ indice di condizionamento <Matrice>
   Il determinante di tutte le sottomatrici deve essere != 0 per applicare l'algoritmo LUnopivot o LUpivot 
   
   ```
+  %CONTROLLO PIU PRECISO ED ACCURATO
+  for i=1:n-1
+    if rank(A(1:i,1:i))
+        disp('Errore')
+        fl = 1;
+        return
+    end
+  end
+  
+  %SECONDA MODALITA
   for i=1:n
     detA(i) = det((A(1:i, 1:i));
   end
@@ -176,6 +186,8 @@ end
   Una matrice A ammette Cholewsky quando è simmetrica ed è definita positiva : 
   
   ```
+  
+  
   %PRIMO CONTROLLO
   if(A==A')
     disp('Matrice simmetrica')

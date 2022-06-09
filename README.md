@@ -121,7 +121,7 @@ indice di condizionamento <Matrice>
   ```
   %CONTROLLO PIU PRECISO ED ACCURATO
   for i=1:n-1
-    if rank(A(1:i,1:i))
+    if rank(A(1:i,1:i)) ~= i
         disp('Errore')
         fl = 1;
         return

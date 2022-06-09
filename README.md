@@ -119,18 +119,6 @@ indice di condizionamento <Matrice>
   Il determinante di tutte le sottomatrici deve essere != 0 per applicare l'algoritmo LUnopivot o LUpivot 
   
   ```
-  [n, m] = size(A)
-  for i=1:n
-    detA(i) = det((A(1:i, 1:i));
-    if detA(i) == 0
-        disp('Non si può applicare')
-        flag = 1
-        return
-    end
-  end
-                           
-                           
-%OPPURE -> PS MIGLIORE IN CASO DI APPROSSIMAZIONI!!!!!!! USA QUESTO 
   for i=1:n
     detA(i) = det((A(1:i, 1:i));
   end
@@ -360,5 +348,22 @@ syms x z
 fax = x.^5 + 2*z*x.^4 + 4*(z^2)*x.^2 + 3;
 I = int(fax);
 ```
+
+-----------
+
+<h3> Minimi quadrati con polinomi di grado n </h3>
+
+```
+x = [1, 2, .....];
+y = [0, 334, ...];
+%Costruisco i polinomi di grado n
+for n=1:3
+  A = costruisci_vander(x, n+1)
+  [coef] = metodoQR(A, y);
+  [pval] = pvalHorner(coef, x);
+  .....
+  .....
+  .....
+end
 
 

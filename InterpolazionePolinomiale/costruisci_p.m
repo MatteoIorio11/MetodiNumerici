@@ -1,4 +1,5 @@
 function [p] = costruisci_p(x, y)
+% Funzione per costruire la funzione del polinomio interpolatore tramite newton
 % x : punti noti
 % y : valori noti ( y=fx(x))
 syms z

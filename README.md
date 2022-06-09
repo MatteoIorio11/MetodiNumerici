@@ -130,7 +130,7 @@ indice di condizionamento <Matrice>
   end
                            
                            
-%OPPURE
+%OPPURE -> PS MIGLIORE IN CASO DI APPROSSIMAZIONI!!!!!!! USA QUESTO 
   for i=1:n
     detA(i) = det((A(1:i, 1:i));
   end

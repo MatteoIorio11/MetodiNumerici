@@ -349,6 +349,9 @@ p = matlabFunction(ps);
 [L, p] = chol(A, 'lower');
 det(A)
 detM = prod(diag(L))^2
+
+%Determinante inversa
+detInvM = 1/detM;
 ```
 
 -------------

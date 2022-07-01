@@ -39,7 +39,6 @@ nmax=1000;
 
 %disp('.....BISEZIONE.....')
 [xbisez,xk_bisez,it_bisez]=bisezione(f,a,b,tolx); 
-
 figure
 % 
 % disp('.....FALSI.....')
@@ -77,5 +76,4 @@ semilogy(1:it_bisez,ek_bisez,'go-',...
  ordinecorde=stimaOrdine(xk_corde,it_corde)
  ordinenewton=stimaOrdine(xk_newton,it_newton)
  ordinesecanti=stimaOrdine(xk_secanti,it_secanti)
- 
 % 

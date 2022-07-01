@@ -5,10 +5,9 @@ fb=fname(b);
 if sign(fa)*sign(fb)>=0
    error('intervallo non corretto');
 else
-    it=0;
+    it=1;
     fxk=fname(a);
     while it<nmax && abs(b-a)>=tol && abs(fxk)>=tol 
-        it=it+1;
         % m = (fb-fa)/(b-a);
         % d = fa/d;
         % xk(it) = a -d;
@@ -24,6 +23,7 @@ else
             b=xk(it);
             fb=fxk;
         end
+            it=it+1;
     end
     if it==nmax 
         error('Raggiunto numero max di iterazioni');

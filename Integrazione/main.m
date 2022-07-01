@@ -18,8 +18,8 @@ fplot(fname);
 for k = 1:1:8
     N = 2^k;
     n(k) = N;
-    [It] = trapcomp(fname, 0, 1, n(k));
-    [Is] = simpcomp(fname, 0, 1, n(k));
+    [It] = TrapComp(fname, 0, 1, n(k));
+    [Is] = SimpComp(fname, 0, 1, n(k));
     errori_t(k) = abs(xesatto_1 - It)/abs(xesatto_1);
     errori_s(k) = abs(xesatto_1 - Is)/abs(xesatto_1);
 end

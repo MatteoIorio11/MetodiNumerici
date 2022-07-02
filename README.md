@@ -297,7 +297,7 @@ for n=5:5:30
  
  
  ```
- [L, U, ,P, flag] = LUpivot(A);
+ [L, U, s,P, flag] = LUpivot(A);
  detA = 1
  for i=1:n
     detA = detA * U(i,i)

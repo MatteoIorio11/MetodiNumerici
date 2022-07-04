@@ -7,8 +7,9 @@ if sign(fa)*sign(fb)>=0
 else
     maxit=ceil(log2((b-a)/tol)-1);
     %fprintf('n. di passi necessari=%d \n',maxit);
-    it=1;
+    it=0;
     while it<=maxit && abs(b-a)>=tol
+        it=it+1;
         xk(it)=a+(b-a)*0.5; 
         %fprintf('it=%d  x=%8.15f \n',it,xk(it));
         fxk=fname(xk(it));
@@ -21,7 +22,6 @@ else
             b=xk(it);
             fb=fxk;
         end
-            it=it+1;
     end
     x=xk(it);
 end

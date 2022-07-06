@@ -49,11 +49,9 @@ function [L,U,P,flag]=LU_parziale(A)
 	  %Scrivi qui il codice che modifica le righe successive alla k-esima
        % calcola il moltiplicatore per la riga i
        %modifica la riga i negli elementi di posizione j da k+1 in avanti
-       for i=k+1:n
-            U(i, k) = U(i, k) / U(k, k);
-            for j = k+1:n
-                U(i, j) = U(i, j) - U(i, k) * U(k, j);
-            end
+       for i = k+1:n
+           U(i,k) = U(i,k)/U(k,k);
+           U(i, k+1:n) = U(i, k+1:n) - U(i,k)*U(k,k+1:n);
        end
     end
   

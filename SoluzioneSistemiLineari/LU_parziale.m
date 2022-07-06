@@ -18,11 +18,11 @@ function [L,U,P,flag]=LU_parziale(A)
   P=eye(n);
   % Fattorizzazione
   for k=1:n-1
-      %Scelta pivot parziale + scambi su U e P
+      %Scelta pivot parziale + scambi su U e P  
       %Al passo k calcolo l'indice di riga (a partire da k) in cui si trova
       %l'elemento di modulo massimo della colonna k-esima
       [pivot,ir_pivot]=max(abs(U(k:n,k))); 
-      ir_pivot=ir_pivot+(k-1); 
+      ir_pivot=ir_pivot+(k-1);
       if pivot == 0
           flag = 1;
           L = [];
@@ -37,11 +37,11 @@ function [L,U,P,flag]=LU_parziale(A)
       %scambi effettuati
       if ir_pivot  ~= k
          % to do 
-         tmp = U(r_max, :);
-         U(r_max, :) = U(k, :);
+         tmp = U(ir_pivot, :);
+         U(ir_pivot, :) = U(k, :);
          U(k, :) = tmp;
-         tmp = P(r_max, :);
-         P(r_max, :) = P(k, :);
+         tmp = P(ir_pivot, :);
+         P(ir_pivot, :) = P(k, :);
          P(k, :) = tmp;
       end
       %Procediamo con l'eliminazione gaussiana classica
@@ -59,4 +59,3 @@ function [L,U,P,flag]=LU_parziale(A)
   
   L= tril(U, -1) + eye(n); % Estrae i moltiplicatori 
   U= triu(U);           % Estrae la parte triangolare superiore+diagonale
-  

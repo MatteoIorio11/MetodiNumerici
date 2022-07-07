@@ -10,7 +10,7 @@ n=size(A,2);% ritorna il numero di colonne di A
 %matrice triangolare superiore R(1:n,1:n) e termine noto h=Q'*y;
 [Q, R] = qr(A);
 h = Q'*y;
-[a, flag] = Usolve(R(1:n, 1:n), h(1:n));
+[a, flag] = Usolve(R, h);
 
 % =============================================================================|
 % a sono i coefficienti del polinomio, dopo dovrò chiamare pvalHorner!!!       |

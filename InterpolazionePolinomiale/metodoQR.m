@@ -4,7 +4,8 @@ function [a] = metodoQR(A,y)
 % output a = vettore soluzione nel senso dei minimi quadrati del sistema lineare
 % sovraderterminato Ax=b, ottenuto mediante  il metodo QRLS
  
-n=size(A,2);
+n=size(A,2);% ritorna il numero di colonne di A
+
 %Calcola la fattorizzazione QR di A e risolvi il sistema lineare con
 %matrice triangolare superiore R(1:n,1:n) e termine noto h=Q'*y;
 [Q, R] = qr(A);

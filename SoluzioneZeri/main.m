@@ -5,7 +5,7 @@ clear all
 
 syms x
 
-scegli_funzione=input('1. Funzione 1 \n 2. Funzione 2 \n 3. Funzione 3 \n');
+scegli_funzione=input('1. Funzione 1 \n 2. FUnzione 2 \n 3. Funzione 3 \n');
 
     switch  scegli_funzione
         case 1
@@ -15,8 +15,10 @@ scegli_funzione=input('1. Funzione 1 \n 2. Funzione 2 \n 3. Funzione 3 \n');
             b=2; 
             x0=-0.5; 
             xm1=-0.3;
+            
         case 2
-            fx=log2(x+3)-2; alpha=1; a=-1; b=2; x0=-0.5; xm1=0.5;    
+            fx=log2(x+3)-2; alpha=1; a=-1; b=2; x0=-0.5; xm1=0.5;
+            
         case 3
             fx=sqrt(x)-x^2/4; alpha=2^(4/3); a=1; b=3;  x0=1.8; xm1=1.5; 
     end

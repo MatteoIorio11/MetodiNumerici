@@ -1,19 +1,25 @@
----
-name: "tagged-release"
-
+name: Bump version
 on:
   push:
-
+    branches:
+      - master
 jobs:
-  tagged-release:
-    name: "Tagged Release"
-    runs-on: "ubuntu-latest"
-
+  build:
+    runs-on: ubuntu-latest
     steps:
-    # Create the release
-      - uses: "marvinpinto/action-automatic-releases@latest"
-        with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: false
-          files: |
-            *
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
+    - name: Bump version and push tag
+      id: bump_version
+      uses: anothrNick/github-tag-action@1.36.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        WITH_V: true
+        DEFAULT_BUMP: minor
+    - name: create release
+      uses: softprops/action-gh-release@v1
+      with:
+        name: ${{ steps.bump_version.outputs.new_tag }}
+        tag_name: ${{ steps.bump_version.outputs.new_tag }}
+        token: ${{ secrets.GITHUB_TOKEN }}

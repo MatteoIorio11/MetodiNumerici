@@ -1,6 +1,9 @@
 function [L,U,P,flag]=LU_parziale(A)
-% Implementazione eplicitando solo il ciclo in k ( fa le operazioni su tutta la
-% sottomatrice da modificare al passo k)
+
+% Implementazione eplicitando i tre cicli in k (passo), i(riga), j
+% (colonna) dell'algoritmo
+
+
 
 % Fattorizzazione PA=LU con pivot parziale
 % In output:
@@ -24,10 +27,9 @@ function [L,U,P,flag]=LU_parziale(A)
       [pivot,ir_pivot]=max(abs(U(k:n,k))); 
       ir_pivot=ir_pivot+(k-1); 
       if pivot == 0
-          flag = 1;
-          L = [];
-          U = [];
-          P = [];
+          disp('pivot nullo')
+          L=[];
+          flag=1; 
           return
       end
       %Se l'indice di riga ir_pivot in cui si trova l'elemento di modulo massimo
@@ -36,27 +38,24 @@ function [L,U,P,flag]=LU_parziale(A)
       %corrispondenti righe della matrice identità per memorizzare gli
       %scambi effettuati
       if ir_pivot  ~= k
-         % to do 
-         tmp = U(r_max, :);
-         U(r_max, :) = U(k, :);
-         U(k, :) = tmp;
-         tmp = P(r_max, :);
-         P(r_max, :) = P(k, :);
-         P(k, :) = tmp;
+         temp=U(k,:); 
+         U(k,:)=U(ir_pivot,:); 
+         U(ir_pivot,:)=temp;
+         temp=P(k,:); 
+         P(k,:)=P(ir_pivot,:); 
+         P(ir_pivot,:)=temp;
       end
       %Procediamo con l'eliminazione gaussiana classica
       %Eliminazione gaussiana
-	  %Scrivi qui il codice che modifica le righe successive alla k-esima
-       % calcola il moltiplicatore per la riga i
-       %modifica la riga i negli elementi di posizione j da k+1 in avanti
-       for i=k+1:n
-            U(i, k) = U(i, k) / U(k, k);
-            for j = k+1:n
-                U(i, j) = U(i, j) - U(i, k) * U(k, j);
-            end
-       end
-    end
+      for i=k+1:n
+      U(i,k)=U(i,k)/U(k,k);                         % Memorizza il moltiplicatore della riga i-esima
+         for j=k+1:n                %cicla sugli elementi della riga i, dalla posizione k+1 alla posizione n        
+          U(i,j)=U(i,j)-U(i,k)*U(k,j);  % modifica l'elemento della riga i-esima in posizione j
+         end
+      end
+  end
+
   
-  L= tril(U, -1) + eye(n); % Estrae i moltiplicatori 
-  U= triu(U);           % Estrae la parte triangolare superiore+diagonale
+  L=tril(U,-1)+eye(n); % Estrae i moltiplicatori 
+  U=triu(U);           % Estrae la parte triangolare superiore+diagonale
   

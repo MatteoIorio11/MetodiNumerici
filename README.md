@@ -402,3 +402,12 @@ end
 p = matlabFunction(ps);
 end
 ```
+
+--------
+<h3> Differenza tra Trap e Simpson </h3>
+
+
+Il calcolo integrale attraverso la funzione trapToll permette di avere un risultato estremamente molto più preciso rispetto all'algoritmo di Simpson poiché il calcolo attraverso Trap utilizza il doppio degli intervalli. Ad esempio in funzioni simmetriche ( sin, cos con una medio-alta frequenza, ecc ecc ) il risultato che si otterrà con Trap sarà molto più accurato dal momento in cui tale algoritmo utilizza il doppio degli intervalli 
+
+
+
